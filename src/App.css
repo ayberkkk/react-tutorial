@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 .App {
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 15px;
-  color: #fff;
-}
+  }
 
 .bootstrap {
   background-color: #563d7c;
@@ -14,4 +12,8 @@
 
 .tailwind {
   background-color: #312E81;
+}
+
+#search {
+  border: 1px solid #111;
 }
