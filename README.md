@@ -7,3 +7,4 @@ These codes are a starter set of packages required to get started with a React p
 - Styled Component
 - Bootstrap
 - Tailwind
+- SCSS
