@@ -2,9 +2,10 @@ import "./App.css";
 import "./Sass.scss";
 import { Container, Row } from "react-bootstrap";
 import StylesComponent from "./components/Styles/StylesComponent";
-import Button from "./components/Button";
-import { createElement } from "react";
 import CustomTab from "./components/CustomTab";
+import Mount from "./components/Mount";
+import Button from "./components/Button";
+import { createElement, useState } from "react";
 
 function App() {
   const todolist = ["todo-1", "todo-2", "todo-3"];
@@ -29,6 +30,8 @@ function App() {
   const searchFunc = () => {
     alert("Search");
   };
+
+  const [show, setShow] = useState(false);
 
   return (
     <main id="main" className="App">
@@ -80,6 +83,17 @@ function App() {
                   <li key={todo}>{todo}</li>
                 ))}
               </ul>
+            </CustomTab.Panel>
+            <CustomTab.Panel title="LifeCycle">
+              <div className="flex justify-center">
+                <button
+                  className="btn btn-primary"
+                  onClick={() => setShow((show) => !show)}
+                >
+                  {show ? "Mount Component Visible" : "Mount Component Hidden"}
+                </button>
+              </div>
+              <div>{show && <Mount />}</div>
             </CustomTab.Panel>
           </CustomTab>
         </Row>
