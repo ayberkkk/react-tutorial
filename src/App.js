@@ -8,6 +8,7 @@ import CustomTab from "./components/CustomTab";
 import Mount from "./components/Mount";
 import Button from "./components/Button";
 import UseReForward from "./components/UseReForward";
+import UseReducer from "./components/UseReducer";
 
 function App() {
   const todolist = ["todo-1", "todo-2", "todo-3"];
@@ -88,6 +89,9 @@ function App() {
                 </button>
               </div>
               <div>{show && <Mount />}</div>
+            </CustomTab.Panel>
+            <CustomTab.Panel title="TodoApp">
+             <UseReducer/>
             </CustomTab.Panel>
           </CustomTab>
         </Row>

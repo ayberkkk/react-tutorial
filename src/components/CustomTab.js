@@ -8,7 +8,7 @@ function CustomTab({ children, activeTab }) {
         {children.map((tab, index) => (
           <button
             key={index}
-            className={`bg-green-200 pl-2 pr-2 m-1 text-white rounded ${active === index ? "bg-green-400" : "bg-gray-400"}`}
+            className={`pl-2 pr-2 m-1 text-white rounded ${active === index ? "bg-green-400" : "bg-gray-400"}`}
             onClick={() => setActive(index)}
           >
             {tab.props.title}
