@@ -9,6 +9,7 @@ import Mount from "./components/Mount";
 import Button from "./components/Button";
 import UseReForward from "./components/UseReForward";
 import UseReducer from "./components/UseReducer";
+import CommitHistory from "./components/CommitHistory";
 
 function App() {
   const todolist = ["todo-1", "todo-2", "todo-3"];
@@ -42,11 +43,14 @@ function App() {
       )}
       */}
           <CustomTab activeTab={0}>
+            <CustomTab.Panel title="Commit History">
+              <CommitHistory owner="ayberkkk" repo="react-tutorial"/>
+            </CustomTab.Panel>
             <CustomTab.Panel title="Style">
               {" "}
               <StylesComponent />
             </CustomTab.Panel>
-            <CustomTab.Panel title="Custom Elem">
+            <CustomTab.Panel title="Custom Elem"> 
               <p style={{ color: "pink" }}>Inline CSS</p>
               <label htmlFor="search" tabIndex={2}>
                 Search
