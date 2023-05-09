@@ -1,31 +1,24 @@
+import { createElement, useState } from "react";
 import "./App.css";
 import "./Sass.scss";
 import { Container, Row } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import StylesComponent from "./components/Styles/StylesComponent";
 import CustomTab from "./components/CustomTab";
 import Mount from "./components/Mount";
 import Button from "./components/Button";
-import { createElement, useState } from "react";
+import UseReForward from "./components/UseReForward";
 
 function App() {
   const todolist = ["todo-1", "todo-2", "todo-3"];
-  const todolist2 = ["todo-1", "todo-2", "todo-3"];
-  const ul = createElement(
-    "ul",
-    null,
-    todolist2.map((todo) => createElement("li", null, todo))
-  );
-  const h1 = createElement("h1", null, "custom h1 element");
+  // const todolist2 = ["todo-1", "todo-2", "todo-3"];
+  // // const ul = createElement(
+  // //   "ul",
+  // //   null,
+  // //   todolist2.map((todo) => createElement("li", null, todo))
+  // // );
 
-  // return createElement(
-  //   "main",
-  //   {
-  //     id: "main",
-  //     className: "App",
-  //   },
-  //   h1,
-  //   ul
-  // );
+  const h1 = createElement("h1", null, "custom h1 element");
 
   const searchFunc = () => {
     alert("Search");
@@ -69,6 +62,12 @@ function App() {
                 tabIndex={1}
                 onClick={() => alert("Search-2")}
               />
+              {h1}
+              <ul>
+                {todolist.map((todo) => (
+                  <li key={todo}>{todo}</li>
+                ))}
+              </ul>
               <div className="flex align-baseline justify-center mt-1">
                 <Button text="Custom Button " variant="success"></Button>
                 <Button text="Custom Button " variant="danger"></Button>
@@ -77,12 +76,7 @@ function App() {
               </div>
             </CustomTab.Panel>
             <CustomTab.Panel title="Test">
-              {h1}
-              <ul>
-                {todolist.map((todo) => (
-                  <li key={todo}>{todo}</li>
-                ))}
-              </ul>
+              <UseReForward/>
             </CustomTab.Panel>
             <CustomTab.Panel title="LifeCycle">
               <div className="flex justify-center">

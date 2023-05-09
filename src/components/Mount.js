@@ -29,9 +29,9 @@ const Mount = () => {
     }
   };
 
-  //   const toggleAllowNegative = () => {
-  //     setAllowNegative(!allowNegative);
-  //   };
+  const toggleAllowNegative = () => {
+    setAllowNegative(!allowNegative);
+  };
 
   return (
     <Container className="mt-4">
@@ -47,12 +47,14 @@ const Mount = () => {
             >
               Back
             </button>
-            {/* <button
-        className={`btn ml-4 ${allowNegative ? "btn-danger" : "btn-success"}`}
-        onClick={toggleAllowNegative}
-      >
-        {allowNegative ? "Disable Negative" : "Enable Negative"}
-      </button> */}
+            <button
+              className={`btn ml-4 ${
+                allowNegative ? "btn-danger" : "btn-success"
+              }`}
+              onClick={toggleAllowNegative}
+            >
+              {allowNegative ? "Disable Negative" : "Enable Negative"}
+            </button>
           </div>
           <div className="text-center mt-1">
             <p>Post ID: {postID}</p>
