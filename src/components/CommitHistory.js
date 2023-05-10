@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
+import { DiReact } from "react-icons/di";
 
 const CommitHistory = ({ owner, repo }) => {
   const [commits, setCommits] = useState([]);
@@ -27,9 +28,19 @@ const CommitHistory = ({ owner, repo }) => {
           <h4>
             Commit History: {owner}/{repo}
           </h4>
-          <ul>
+          <ul style={{padding:"0"}}>
             {commits.map((commit) => (
-              <li key={commit.sha}>{commit.commit.message}</li>
+              <li key={commit.sha} className="flex align-items-center mt-1">
+                <DiReact className="text-blue-500" style={{fontSize:"24px"}}/>
+                <a
+                  href={commit.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 text-gray-700"
+                >
+                  {commit.commit.message}
+                </a>
+              </li>
             ))}
           </ul>
         </Col>
