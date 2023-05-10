@@ -1,7 +1,7 @@
 import { createElement, useState } from "react";
 import "./App.css";
 import "./Sass.scss";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import StylesComponent from "./components/Styles/StylesComponent";
 import CustomTab from "./components/CustomTab";
@@ -44,46 +44,94 @@ function App() {
       */}
           <CustomTab activeTab={0}>
             <CustomTab.Panel title="Commit History">
-              <CommitHistory owner="ayberkkk" repo="react-tutorial"/>
+              <CommitHistory owner="ayberkkk" repo="react-tutorial" />
             </CustomTab.Panel>
-            <CustomTab.Panel title="Style">
+            <CustomTab.Panel title="Style Elements">
               {" "}
               <StylesComponent />
             </CustomTab.Panel>
-            <CustomTab.Panel title="Custom Elem"> 
-              <p style={{ color: "pink" }}>Inline CSS</p>
-              <label htmlFor="search" tabIndex={2}>
-                Search
-              </label>
-              <input
-                type="text"
-                id="search"
-                tabIndex={1}
-                onClick={searchFunc}
-              />{" "}
-              <input
-                type="text"
-                id="search"
-                tabIndex={1}
-                onClick={() => alert("Search-2")}
-              />
-              {h1}
-              <ul>
-                {todolist.map((todo) => (
-                  <li key={todo}>{todo}</li>
-                ))}
-              </ul>
-              <div className="flex align-baseline justify-center mt-1">
-                <Button text="Custom Button " variant="success"></Button>
-                <Button text="Custom Button " variant="danger"></Button>
-                <Button text="Custom Button " variant="warning"></Button>
-                <Button text="Custom Button "></Button>
+            <CustomTab.Panel title="Custom Elements">
+              <p
+                style={{
+                  color: "pink",
+                  fontSize: "2rem",
+                  borderBottom: "1px solid #111",
+                }}
+              >
+                Inline CSS writing
+              </p>
+              <div
+                style={{
+                  borderBottom: "1px solid #111",
+                  paddingBottom: "1rem",
+                }}
+              >
+                <p>htmlFor-onClik alert two diffrent function</p>
+                <label htmlFor="search" tabIndex={2}>
+                  Search
+                </label>
+                <input
+                  type="text"
+                  id="search"
+                  tabIndex={1}
+                  onClick={searchFunc}
+                />{" "}
+                <input
+                  type="text"
+                  id="search"
+                  tabIndex={1}
+                  onClick={() => alert("Search-2")}
+                />
               </div>
+              <div
+                style={{
+                  paddingBottom: "1rem",
+                }}
+              >
+                <p
+                  style={{
+                    borderBottom: "1px solid #111",
+                    paddingBottom: "1rem",
+                  }}
+                >
+                  createElement const
+                  {h1}
+                </p>
+                <p
+                  style={{
+                    borderBottom: "1px solid #111",
+                    paddingBottom: "1rem",
+                  }}
+                >
+                  const todolist const map property
+                  <ul>
+                    {todolist.map((todo) => (
+                      <li key={todo}>{todo}</li>
+                    ))}
+                  </ul>
+                </p>
+              </div>
+              <Col className="d-lg-flex align-baseline justify-center mt-1 border-b-2 pb-3">
+                <Row>
+                  <Col lg="6">
+                    <Button text="Custom Button " variant="success"></Button>
+                  </Col>
+                  <Col lg="6">
+                    <Button text="Custom Button " variant="danger"></Button>
+                  </Col>
+                  <Col lg="6">
+                    <Button text="Custom Button " variant="warning"></Button>
+                  </Col>
+                  <Col lg="6">
+                    <Button text="Custom Button "></Button>
+                  </Col>
+                </Row>
+              </Col>
             </CustomTab.Panel>
             <CustomTab.Panel title="Test">
-              <UseReForward/>
+              <UseReForward />
             </CustomTab.Panel>
-            <CustomTab.Panel title="LifeCycle">
+            <CustomTab.Panel title="LifeCycle (useEffect-useState)">
               <div className="flex justify-center">
                 <button
                   className="btn btn-primary"
@@ -94,8 +142,8 @@ function App() {
               </div>
               <div>{show && <Mount />}</div>
             </CustomTab.Panel>
-            <CustomTab.Panel title="TodoApp">
-             <UseReducer/>
+            <CustomTab.Panel title="Mini Todo List">
+              <UseReducer />
             </CustomTab.Panel>
           </CustomTab>
         </Row>

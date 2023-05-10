@@ -4,9 +4,9 @@ import { Button, Breadcrumb } from "react-bootstrap";
 
 const Bootstrap = () => {
   return (
-    <div className="bootstrap">
-      <h3>Bootstrap Component</h3>
-      <Button variant="danger">Test</Button>
+    <div className="bootstrap p-3">
+      <h3 className="text-white">Bootstrap Component</h3>
+      <Button variant="danger">Danger</Button>
       <Breadcrumb>
         <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
         <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">

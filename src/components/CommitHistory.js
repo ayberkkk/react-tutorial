@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Container, Row, Col } from "react-bootstrap";
 
 const CommitHistory = ({ owner, repo }) => {
   const [commits, setCommits] = useState([]);
@@ -20,14 +21,20 @@ const CommitHistory = ({ owner, repo }) => {
   }, [owner, repo]);
 
   return (
-    <div>
-      <h2>Commit History: {owner}/{repo}</h2>
-      <ul>
-        {commits.map((commit) => (
-          <li key={commit.sha}>{commit.commit.message}</li>
-        ))}
-      </ul>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <h4>
+            Commit History: {owner}/{repo}
+          </h4>
+          <ul>
+            {commits.map((commit) => (
+              <li key={commit.sha}>{commit.commit.message}</li>
+            ))}
+          </ul>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

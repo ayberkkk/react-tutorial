@@ -1,19 +1,83 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { BsList, BsX } from "react-icons/bs";
 
 function CustomTab({ children, activeTab }) {
   const [active, setActive] = useState(activeTab);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleTabClick = (index) => {
+    setActive(index);
+    if (windowWidth <= 992) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      if (window.innerWidth > 992) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div>
-      <nav className="flex mt-4 justify-center">
-        {children.map((tab, index) => (
+      <nav className={`d-lg-flex mt-lg-4 justify-center`}>
+        {windowWidth <= 992 && (
           <button
-            key={index}
-            className={`pl-2 pr-2 m-1 text-white rounded ${active === index ? "bg-green-400" : "bg-gray-400"} ${tab.props.title === "Commit History" ? "bg-blue-400" : ""}`}
-            onClick={() => setActive(index)}
+            className={`mobile-menu-toggle ${
+              isMobileMenuOpen ? "mobile-menu-open" : "mobile-menu-closed"
+            } bg-primary text-white py-2 px-4 rounded`}
+            onClick={toggleMobileMenu}
           >
-            {tab.props.title}
+             {isMobileMenuOpen ? <BsX /> : <BsList />}
           </button>
-        ))}
+        )}
+        {isMobileMenuOpen && windowWidth <= 992 && (
+          <div className="mobile-menu-items absolute top-0 right-0 bg-white p-4 rounded shadow-lg h-100">
+            {children.map((tab, index) => (
+              <button
+                key={index}
+                className={`block w-full py-2 px-4 text-gray-800 rounded mt-3 ${
+                  active === index ? "bg-green-400 text-white" : "bg-gray-300"
+                } ${tab.props.title === "Commit History" ? "bg-blue-400" : ""}`}
+                onClick={() => {
+                  handleTabClick(index);
+                  toggleMobileMenu();
+                }}
+              >
+                {tab.props.title}
+              </button>
+            ))}
+          </div>
+        )}
+        {windowWidth > 992 && (
+          <div className="desktop-menu">
+            {children.map((tab, index) => (
+              <button
+                key={index}
+                className={`pl-2 pr-2 m-1 text-white rounded ${
+                  active === index ? "bg-green-400" : "bg-gray-400"
+                } ${tab.props.title === "Commit History" ? "bg-blue-400" : ""}`}
+                onClick={() => handleTabClick(index)}
+              >
+                {tab.props.title}
+              </button>
+            ))}
+          </div>
+        )}
       </nav>
       {children[active]}
     </div>
@@ -21,7 +85,7 @@ function CustomTab({ children, activeTab }) {
 }
 
 CustomTab.Panel = function ({ children }) {
-  return <div className="p-4 ml-4">{children}</div>;
+  return <div className="mt-3">{children}</div>;
 };
 
 export default CustomTab;

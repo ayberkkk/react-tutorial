@@ -12,11 +12,17 @@ const StylesComponent = () => {
         <Col xs={12}>
           <Test />
         </Col>
-        <Col xs={12}>
-          <Title>Styled Title Component</Title>
-        </Col>
-        <Col xs={12}>
-          <Title theme="dark">Styled Dark Title Component</Title>
+        <Col lg={12}>
+          <Row>
+            <Col xs={12} lg={6}>
+              <Title>Styled Component Title Component</Title>
+            </Col>
+            <Col xs={12} lg={6}>
+              <Title theme="dark">
+                Styled Component dark-theme Title Component
+              </Title>
+            </Col>
+          </Row>
         </Col>
         <Col xs={12}>
           <Bootstrap></Bootstrap>
@@ -25,7 +31,9 @@ const StylesComponent = () => {
           <Tailwind />
         </Col>
         <Col xs={12}>
-          <p className="sass-p">Sass Style</p>
+          <div className="sass">
+            <h3>SCSS</h3>
+          </div>
         </Col>
       </Row>
     </Container>
