@@ -50,7 +50,7 @@ const UseReducer = () => {
         dispatch({
           type: "ADD_TODO",
           payload: state.todo,
-        });
+        }); 
       }
     },
     [state.todo, dispatch]
