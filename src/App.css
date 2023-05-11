@@ -17,3 +17,34 @@
 #search {
   border: 1px solid #111;
 }
+
+.form-control {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.todoInput {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.addBtn {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.todo-items {
+  flex-grow: 1;
+  margin: 0 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.deleteBtn {
+  flex-shrink: 0;
+}

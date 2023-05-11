@@ -128,9 +128,6 @@ function App() {
                 </Row>
               </Col>
             </CustomTab.Panel>
-            <CustomTab.Panel title="Test">
-              <UseReForward />
-            </CustomTab.Panel>
             <CustomTab.Panel title="LifeCycle (useEffect-useState)">
               <div className="flex justify-center">
                 <button
@@ -144,6 +141,9 @@ function App() {
             </CustomTab.Panel>
             <CustomTab.Panel title="Mini Todo List">
               <UseReducer />
+            </CustomTab.Panel>
+            <CustomTab.Panel title="Test">
+              <UseReForward />
             </CustomTab.Panel>
           </CustomTab>
         </Row>
