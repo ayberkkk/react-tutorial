@@ -34,7 +34,7 @@ function CustomTab({ children, activeTab }) {
 
   return (
     <div>
-      <nav className={`d-lg-flex mt-lg-4 justify-center`}>
+      <nav className="d-lg-flex mt-lg-4 justify-center">
         {windowWidth <= 992 && (
           <button
             className={`mobile-menu-toggle ${
@@ -42,7 +42,7 @@ function CustomTab({ children, activeTab }) {
             } bg-primary text-white py-2 px-4 rounded`}
             onClick={toggleMobileMenu}
           >
-             {isMobileMenuOpen ? <BsX /> : <BsList />}
+            {isMobileMenuOpen ? <BsX /> : <BsList />}
           </button>
         )}
         {isMobileMenuOpen && windowWidth <= 992 && (
@@ -51,8 +51,14 @@ function CustomTab({ children, activeTab }) {
               <button
                 key={index}
                 className={`block w-full py-2 px-4 text-gray-800 rounded mt-3 ${
-                  active === index ? "bg-green-400 text-white" : "bg-gray-300"
-                } ${tab.props.title === "Commit History" ? "bg-blue-400" : ""}`}
+                  active === index ? "bg-green-400 text-white" : "bg-gray-400"
+                } ${
+                  tab.props.title === "Commit-History"
+                    ? "bg-blue-400 text-white"
+                    : tab.props.title === "Hooks-Components"
+                    ? "bg-yellow-400 text-white"
+                    : ""
+                }`}
                 onClick={() => {
                   handleTabClick(index);
                   toggleMobileMenu();
@@ -68,9 +74,15 @@ function CustomTab({ children, activeTab }) {
             {children.map((tab, index) => (
               <button
                 key={index}
-                className={`pl-2 pr-2 m-1 text-white rounded ${
-                  active === index ? "bg-green-400" : "bg-gray-400"
-                } ${tab.props.title === "Commit History" ? "bg-blue-400" : ""}`}
+                className={`pl-2 pr-2 m-1 rounded text-white ${
+                  active === index ? "bg-green-400 text-white" : "bg-gray-400"
+                } ${
+                  tab.props.title === "Commit-History"
+                    ? "bg-blue-400 text-white"
+                    : tab.props.title === "Hooks-Components"
+                    ? "bg-yellow-400 text-white"
+                    : ""
+                }`}
                 onClick={() => handleTabClick(index)}
               >
                 {tab.props.title}

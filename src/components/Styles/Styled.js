@@ -12,3 +12,10 @@ export const Title = styled.h4`
   
   `}
 `;
+
+export const DescTitle  = styled.h5`
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+`;
