@@ -5,6 +5,7 @@ import useReducerImg from "../assets/images/useReducer.png";
 import useCallbackImg from "../assets/images/useCallback.png";
 import useEffectImg from "../assets/images/useEffect.png";
 import useRefImg from "../assets/images/useRef.png";
+import useContextImg from "../assets/images/useContext.png";
 import memoImg from "../assets/images/memo.png";
 import { DescTitle } from "./Styles/Styled";
 
@@ -39,6 +40,12 @@ const Description = () => {
       description:
         "useRef is used to hold a value and updating the value does not affect the state of the component even if the component is re-rendered.",
       image: useRefImg,
+    },
+    {
+      title: "useContext",
+      description:
+        "useContext is a hook used to access a context object in React. Context allows values to be passed from a component to child components so you don't have to pass data via props. The useContext hook is used to easily access the values in the context object.A context object is typically created with a createContext function and creates a field where values are supplied through the Provider component. These values are passed to the context object as values and become accessible to child components.",
+      image: useContextImg,
     },
     {
       title: "React.memo()",

@@ -12,6 +12,9 @@ import UseReducer from "./components/UseReducer";
 import CommitHistory from "./components/CommitHistory";
 import Description from "./components/Description";
 import Form from "./components/Form";
+import Changer from "./components/Changer";
+import SiteProvider from "./components/context/SiteContext";
+import AuthProvider from "./components/context/AuthContext";
 
 function App() {
   const todolist = ["todo-1", "todo-2", "todo-3"];
@@ -50,6 +53,13 @@ function App() {
             </CustomTab.Panel>
             <CustomTab.Panel title="Hooks-Component">
               <Description />
+            </CustomTab.Panel>
+            <CustomTab.Panel title="Changer">
+              <SiteProvider>
+                <AuthProvider>
+                  <Changer />
+                </AuthProvider>
+              </SiteProvider>
             </CustomTab.Panel>
             <CustomTab.Panel title="Style Elements">
               {" "}
