@@ -34,19 +34,15 @@ function CustomTab({ children, activeTab }) {
 
   return (
     <div>
-      <nav className="d-lg-flex mt-lg-4 justify-center">
-        {windowWidth <= 992 && (
-          <button
-            className={`mobile-menu-toggle ${
-              isMobileMenuOpen ? "mobile-menu-open" : "mobile-menu-closed"
-            } bg-primary text-white py-2 px-4 rounded`}
-            onClick={toggleMobileMenu}
-          >
-            {isMobileMenuOpen ? <BsX /> : <BsList />}
-          </button>
-        )}
-        {isMobileMenuOpen && windowWidth <= 992 && (
-          <div className="mobile-menu-items absolute top-0 right-0 bg-white p-4 rounded shadow-lg h-100">
+      <nav>
+        <button
+          className="bg-primary text-white py-2 px-4 rounded"
+          onClick={toggleMobileMenu}
+        >
+          {isMobileMenuOpen ? <BsX /> : <BsList />}
+        </button>
+        {isMobileMenuOpen && (
+          <div className="absolute top-0 right-0 bg-white p-4 rounded shadow-lg h-100">
             {children.map((tab, index) => (
               <button
                 key={index}
@@ -63,27 +59,6 @@ function CustomTab({ children, activeTab }) {
                   handleTabClick(index);
                   toggleMobileMenu();
                 }}
-              >
-                {tab.props.title}
-              </button>
-            ))}
-          </div>
-        )}
-        {windowWidth > 992 && (
-          <div className="desktop-menu">
-            {children.map((tab, index) => (
-              <button
-                key={index}
-                className={`pl-2 pr-2 m-1 rounded text-white ${
-                  active === index ? "bg-green-400 text-white" : "bg-gray-400"
-                } ${
-                  tab.props.title === "Commit-History"
-                    ? "bg-blue-400 text-white"
-                    : tab.props.title === "Hooks-Components"
-                    ? "bg-yellow-400 text-white"
-                    : ""
-                }`}
-                onClick={() => handleTabClick(index)}
               >
                 {tab.props.title}
               </button>

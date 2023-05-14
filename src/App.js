@@ -15,6 +15,7 @@ import Form from "./components/Form";
 import Changer from "./components/Changer";
 import SiteProvider from "./components/context/SiteContext";
 import AuthProvider from "./components/context/AuthContext";
+import Fetch from "./components/fetch/Fetch";
 
 function App() {
   const todolist = ["todo-1", "todo-2", "todo-3"];
@@ -159,6 +160,9 @@ function App() {
             </CustomTab.Panel>
             <CustomTab.Panel title="Form Elem">
               <Form />
+            </CustomTab.Panel>
+            <CustomTab.Panel title="Fetch API-Services">
+              <Fetch />
             </CustomTab.Panel>
             <CustomTab.Panel title="Test">
               <UseReForward />
