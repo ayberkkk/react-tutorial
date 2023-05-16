@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Modal } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { DescTitle } from "./Styles/Styled";
+import { Helmet } from "react-helmet";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import useStateImg from "../assets/images/useState.png";
 import useReducerImg from "../assets/images/useReducer.png";
@@ -120,6 +121,9 @@ const Description = () => {
 
   return (
     <Container className="mx-auto">
+      <Helmet>
+        <title>React Tutorial | Description</title>
+      </Helmet>
       <h3 className="text-center mb-4">
         Bu projede kullanılan React bileşenleri
       </h3>
@@ -134,7 +138,7 @@ const Description = () => {
             </div>
             <div className="image-container">
               <LazyLoadImage
-               effect="blur" // Add a blur effect while loading
+                effect="blur" // Add a blur effect while loading
                 className="img-fluid object-contain h-64 w-full cursor-pointer"
                 src={item.image}
                 title={item.title}

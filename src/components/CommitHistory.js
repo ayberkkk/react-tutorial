@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import { DiReact } from "react-icons/di";
+import { Helmet } from "react-helmet";
 
 const CommitHistory = ({ owner, repo }) => {
   const [commits, setCommits] = useState([]);
@@ -23,6 +24,9 @@ const CommitHistory = ({ owner, repo }) => {
 
   return (
     <Container>
+        <Helmet>
+        <title>React Tutorial | Commit History</title>
+      </Helmet>
       <Row>
         <Col>
           <h4>

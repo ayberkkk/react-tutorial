@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 
 const Mount = () => {
   const [post, setPost] = useState({});
@@ -35,6 +36,9 @@ const Mount = () => {
 
   return (
     <Container className="mt-4">
+      <Helmet>
+        <title>React Tutorial | LifeCycle</title>
+      </Helmet>
       <Row>
         <Col lg="6">
           <div className="flex justify-center">

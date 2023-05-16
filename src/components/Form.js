@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const Form = () => {
   const [name, setName] = useState("Ayberk");
@@ -71,6 +72,9 @@ const Form = () => {
 
   return (
     <>
+        <Helmet>
+        <title>React Tutorial | Form</title>
+      </Helmet>
       <button className="btn btn-primary" onClick={() => setName("ali")}>
         Change to Name
       </button>

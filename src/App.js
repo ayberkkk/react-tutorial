@@ -1,7 +1,8 @@
 import { createElement, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 import "./App.css";
 import "./Sass.scss";
-import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import StylesComponent from "./components/Styles/StylesComponent";
 import CustomTab from "./components/CustomTab";
@@ -37,6 +38,9 @@ function App() {
 
   return (
     <main id="main" className="App">
+      <Helmet>
+        <title>React Tutorial | </title>
+      </Helmet>
       <Container>
         <Row>
           {/* 

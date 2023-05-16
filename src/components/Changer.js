@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { Context } from "./context/SiteContext";
 import { useAuth } from "./context/AuthContext";
+import { Helmet } from "react-helmet";
 
 const Changer = () => {
   const { theme, setTheme, language, setLanguage } = useContext(Context);
@@ -30,6 +31,9 @@ const Changer = () => {
 
   return (
     <>
+      <Helmet>
+        <title>React Tutorial | Changer Elem</title>
+      </Helmet>
       Theme : {theme}
       <br />
       <Button

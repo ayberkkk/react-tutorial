@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { PostService, UserService } from "./services";
+import { Helmet } from "react-helmet";
 
 const Fetch = () => {
   const [users, setUsers] = useState(null);
@@ -10,16 +11,16 @@ const Fetch = () => {
   headers.append("Content-Type", "application/json");
   headers.append("Authorization", "Bearer abork1234567890");
 
-//   const addPost = (data) => {
-//     fetch("https://jsonplaceholder.typicode.com/posts", {
-//       method: "POST",
-//       body: JSON.stringify(data),
-//       headers: headers,
-//     })
-//       .then((response) => response.json())
-//       .then((data) => console.log(data))
-//       .catch((error) => console.log(error));
-//   };
+  //   const addPost = (data) => {
+  //     fetch("https://jsonplaceholder.typicode.com/posts", {
+  //       method: "POST",
+  //       body: JSON.stringify(data),
+  //       headers: headers,
+  //     })
+  //       .then((response) => response.json())
+  //       .then((data) => console.log(data))
+  //       .catch((error) => console.log(error));
+  //   };
 
   useEffect(() => {
     PostService.getPosts().then((res) => console.log(res));
@@ -48,6 +49,9 @@ const Fetch = () => {
 
   return (
     <>
+      <Helmet>
+        <title>React Tutorial | Fetch Apı - Services</title>
+      </Helmet>
       <form>
         <div className="mb-3">
           <input

@@ -4,10 +4,14 @@ import { Title } from "./Styled";
 import Bootstrap from "./Bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import Tailwind from "./Tailwind";
+import { Helmet } from "react-helmet";
 
 const StylesComponent = () => {
   return (
     <Container>
+    <Helmet>
+      <title>React Tutorial | CSS Framework</title>
+    </Helmet>
       <Row>
         <Col xs={12}>
           <Test />

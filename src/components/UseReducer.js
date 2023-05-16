@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import { Input } from "reactstrap";
 import ReactMemo from "./ReactMemo";
 import { BiLink } from "react-icons/bi";
+import { Helmet } from "react-helmet";
 
 // Reducer: Durum güncelleme işlemlerini gerçekleştiren fonksiyon
 function reducer(state, action) {
@@ -114,6 +115,9 @@ const UseReducer = () => {
   return (
     <section>
       <Container>
+        <Helmet>
+          <title>React Tutorial | Mini Todo List</title>
+        </Helmet>
         <Row>
           <ReactMemo />
           <Col lg={12} className="mb-3">
@@ -159,7 +163,10 @@ const UseReducer = () => {
                       className="flex justify-around align-items-center mt-1 w-100"
                       key={index}
                     >
-                      <BiLink className="text-blue-900" style={{fontSize:"24px"}} />
+                      <BiLink
+                        className="text-blue-900"
+                        style={{ fontSize: "24px" }}
+                      />
                       <span className="font-semibold todo-items">{todo}</span>
                       <Button
                         onClick={() => deleteHandler(index)}
