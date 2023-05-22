@@ -18,6 +18,7 @@ import SiteProvider from "./components/context/SiteContext";
 import AuthProvider from "./components/context/AuthContext";
 import Fetch from "./components/fetch/Fetch";
 import Router from "./components/router/Router";
+import ModalsComp from "./components/modals-comp/ModalsComp";
 
 function App() {
   const todolist = ["todo-1", "todo-2", "todo-3"];
@@ -171,6 +172,9 @@ function App() {
             </CustomTab.Panel>
             <CustomTab.Panel title="Router">
               <Router />
+            </CustomTab.Panel>
+            <CustomTab.Panel title="Modals">
+              <ModalsComp />
             </CustomTab.Panel>
             <CustomTab.Panel title="Test">
               <UseReForward />
