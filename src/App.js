@@ -19,6 +19,7 @@ import AuthProvider from "./components/context/AuthContext";
 import Fetch from "./components/fetch/Fetch";
 import Router from "./components/router/Router";
 import ModalsComp from "./components/modals-comp/ModalsComp";
+import Next18 from "./components/Next18";
 
 function App() {
   const todolist = ["todo-1", "todo-2", "todo-3"];
@@ -45,15 +46,15 @@ function App() {
       <Container>
         <Row>
           {/* 
-      <h3>{process.env.NODE_ENV}</h3>
-     development logo 
-      {process.env.NODE_ENV === "development" && (
-        <>
-          <p>{process.env.REACT_APP_API_URL}</p>
-          <img src={logo} alt="logo" title="logo" />
-        </>
-      )}
-      */}
+              <h3>{process.env.NODE_ENV}</h3>
+            development logo 
+              {process.env.NODE_ENV === "development" && (
+                <>
+                  <p>{process.env.REACT_APP_API_URL}</p>
+                  <img src={logo} alt="logo" title="logo" />
+                </>
+              )}
+        */}
           <CustomTab activeTab={0}>
             <CustomTab.Panel title="Commit History">
               <CommitHistory owner="ayberkkk" repo="react-tutorial" />
@@ -175,6 +176,9 @@ function App() {
             </CustomTab.Panel>
             <CustomTab.Panel title="Modals">
               <ModalsComp />
+            </CustomTab.Panel>
+            <CustomTab.Panel title="i18n">
+              <Next18 />
             </CustomTab.Panel>
             <CustomTab.Panel title="Test">
               <UseReForward />
