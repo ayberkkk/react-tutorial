@@ -15,8 +15,14 @@ This repository includes the following items:
 
 This project utilizes the following technologies:
 
-- [React.js]
+- React.js
 - [Styled Components](https://styled-components.com): A CSS-in-JS library used to define CSS styles specific to React components.
 - [Bootstrap](https://getbootstrap.com): A popular CSS framework that offers ready-to-use components and style templates.
 - [Tailwind CSS](https://tailwindcss.com): An easy-to-use CSS framework that enables rapid styling by combining various utility classes.
 - SCSS: A CSS preprocessor and extended syntax for Sass (Syntactically Awesome Style Sheets).
+
+
+## Followed Training Playlist
+
+- https://www.youtube.com/watch?v=slVS7QNsSk8&list=PLfAfrKyDRWrGXWpnJdyC4yXIW6v-PcFu-&ab_channel=PROTOTURK
+
