@@ -18,6 +18,7 @@ import SiteProvider from "./components/context/SiteContext";
 import AuthProvider from "./components/context/AuthContext";
 import Fetch from "./components/fetch/Fetch";
 import Router from "./components/router/Router";
+import ReactRedux from "./components/redux/ReactRedux";
 import ModalsComp from "./components/modals-comp/ModalsComp";
 import Next18 from "./components/Next18";
 
@@ -70,7 +71,6 @@ function App() {
               </SiteProvider>
             </CustomTab.Panel>
             <CustomTab.Panel title="Style Elements">
-              {" "}
               <StylesComponent />
             </CustomTab.Panel>
             <CustomTab.Panel title="Custom Elements">
@@ -173,6 +173,9 @@ function App() {
             </CustomTab.Panel>
             <CustomTab.Panel title="Router">
               <Router />
+            </CustomTab.Panel>
+            <CustomTab.Panel title="Redux">
+              <ReactRedux />
             </CustomTab.Panel>
             <CustomTab.Panel title="Modals">
               <ModalsComp />
